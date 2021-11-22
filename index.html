@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mugcrater</title>
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i"
+    rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="lib/hover/hover.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/all.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Responsive css -->
+  <link href="css/responsive.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/mugcrater-fabicon.png">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <!-- Main Navigation -->
+      <nav class="main-nav navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="site-logo navbar-brand" href="#">
+            <img src='images/Mugcrater Logo 1.svg' class="d-inline-block align-top" alt="Logo">
+          </a>
+          <!-- hamburger menu -->
+          <div class="hamburger-menu d-block d-lg-none float-left">
+            <span class="fas fa-bars" onclick="openMainNav()"></span>
+            <i class="fas fa-bars"></i>
+            <div id="hamburger-main-nav" class="sidebar">
+              <a href="javascript:void(0)" class="closebtn fas fa-times" onclick="closeMainNav()"></a>
+              <a href="#home" onclick="closeMainNav()"> Home </a>
+              <a href="#home" onclick="closeMainNav()"> About </a>
+              <a href="#portfolio" onclick="closeMainNav()"> Portfolio </a>
+            </div>
+          </div><!-- //.hamburger menu -->
+          <!-- main menu -->
+          <div class="d-none d-lg-block mainNav">
+            <nav aria-label="Horizontal" role="navigation">
+              <ul class="navbar-nav navbar-right">
+                <li>
+                  <a href="#home"> Home </a>
+                </li>
+                <li>
+                  <a href="#about"> About </a>
+                </li>
+                <li>
+                  <a href="#portfolio"> Portfolio </a>
+                </li>
+              </ul>
+            </nav>
+          </div><!-- main menu -->
+        </div>
+      </nav><!-- //.Main Navigation -->
+    </div>
+  </header><!-- //.Header -->
+
+  <!-- Custom Banner -->
+  <div class="carousel slide" id="Home">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="carousel-caption gradientColor">
+        </div>
+        <img class="d-block" src='images/banner-mugcrater.png' />
+        <div class="container">
+          <div class="carousel-caption d-flex h-100 align-items-center labelBanner">
+            <div class="carousel-content">
+              <div class="row">
+                <div class="col-lg-8 order-lg-1 contentLeft">
+                  <div class="tagLineMinor1Class">
+                    <span class="tagLineMinor1"> Hello, World! </span>
+                  </div>
+                  <hr class="borderLine"></hr>
+                  <div class="tagLineMinorClass">
+                    <span class="tagLineMinor"> Right People, Amazing Professionals. </span>
+                  </div>
+                  <div class="col contentBtn">
+                    <a class="bannerBtn" href="#contact"> Contact Us </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- //.Custom Banner -->
+
+  <!-- About Section -->
+  <div class="aboutSection" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 aboutTitle">
+          <span class="contentTitle"> About Us. </span>
+        </div>
+        <div class="col-12 aboutIntro">
+          <span class="contentIntro"> We provide Web Design and Development services to help your business succeed. </span>
+        </div>
+        <hr class="borderLineContent"></hr>
+        <!-- <div class="col-12 aboutDesc">
+          <span class="contentDesc"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+        </div> -->
+      </div>
+    </div>
+  </div><!-- //.About Us -->
+
+  <!-- Portfolio -->
+  <div class="text-center paddsection" id="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="portfolio-list">
+            <ul class="nav list-unstyled" id="portfolio-flters">
+              <li class="filter filter-active" data-filter=".all">all</li>
+              <li class="filter" data-filter=".webdesign">Website</li>
+              <li class="filter" data-filter=".posters">Poster</li>
+            </ul>
+          </div>
+          <div class="portfolio-container">
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all webdesign">
+              <a class="popup-img" href="images/portfolio/1.png">
+                <img src="images/portfolio/1.png" alt="img">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all posters">
+              <a class="popup-img" href="images/portfolio/2.png">
+                <img src="images/portfolio/2.png" alt="img">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all posters">
+              <a class="popup-img" href="images/portfolio/3.png">
+                <img src="images/portfolio/3.png" alt="img">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all webdesign">
+              <a class="popup-img" href="images/portfolio/4.png">
+                <img src="images/portfolio/4.png" alt="img">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all posters">
+              <a class="popup-img" href="images/portfolio/5.png">
+                <img src="images/portfolio/5.png" alt="img">
+              </a>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all webdesign">
+              <a class="popup-img" href="images/portfolio/6.png">
+                <img src="images/portfolio/6.png" alt="img">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Portfolio -->
+
+  <!-- start section footer -->
+  <div id="footer" class="text-center">
+    <div class="container">
+      <div class="socials-media text-center">
+        <ul class="list-unstyled">
+          <li><a href="https://www.linkedin.com/company/mugcrater" target="_blank"><i class="ion-social-linkedin"></i></a>
+          </li>
+          <li><a href="https://www.instagram.com/mugcrater" target="_blank"><i class="ion-social-instagram"></i></a>
+          </li>
+        </ul>
+        <p>All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+  <!-- End section footer -->
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/typed/typed.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
