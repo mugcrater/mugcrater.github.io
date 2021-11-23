@@ -11,7 +11,7 @@ jQuery(document).ready(function(){
       jQuery(".main-nav").css("max-height" , "unset");
       // jQuery(".main-nav ul a").css("font-size" , "20px");
       jQuery(".site-logo img").css("max-height" , "3rem");
-      jQuery(".sidebar .closebtn").css("top" , "20px");
+      jQuery(".sidebar .closebtn").css("top" , "14px");
       document.getElementById("header").style.top = "10px";
     }
     else{
