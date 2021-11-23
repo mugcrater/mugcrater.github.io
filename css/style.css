@@ -301,6 +301,11 @@ blockquote {
   font-size: 30px;
   cursor: pointer;
 }
+.openbtn {
+  font-size: 36px;
+  cursor: pointer;
+  color: #ffffff;
+}
 .sidebar {
   height: 100%;
   width: 0;
@@ -329,7 +334,7 @@ blockquote {
   position: absolute;
   top: 20px;
   right: 25px;
-  font-size: 35px;
+  font-size: 36px;
   margin-left: 50px;
 }
 .gradientColor {
@@ -500,7 +505,7 @@ blockquote {
 
 #portfolio .portfolio-list .nav li:hover,
 #portfolio .portfolio-list .nav li.filter-active {
-  color: #b8a07e;
+  color: #cb3694;
   -moz-transition: all 0.5s ease-in-out 0s;
   -ms-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
