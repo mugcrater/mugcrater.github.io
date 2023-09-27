@@ -530,6 +530,29 @@ blockquote {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/*  Contact Us
+/*-----------------------------------------------------------------------------------*/
+.TUIr4b{
+  padding: 10px 35px 10px 35px !important;
+  font-size: 23px !important;
+  font-weight: unset !important;
+  font-family: "Jost_Reg", sans-serif !important;
+  color: #ffffff !important;
+  border: 1px solid #39489e !important;
+  background-color: #39489e !important;
+  border-radius: 1px !important;
+  outline: unset !important;
+}
+
+.TUIr4b:hover {
+  color: #ffffff !important;
+  border: 1px solid #d2489a !important;
+  background-color: #d2489a !important;
+  text-decoration: none !important;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
 /*  Footer
 /*-----------------------------------------------------------------------------------*/
 
