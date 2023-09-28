@@ -468,10 +468,9 @@ blockquote {
 /*-----------------------------------------------------------------------------------*/
 /*  Portfolio
 /*-----------------------------------------------------------------------------------*/
-
 #portfolio {
   padding-top: 52px;
-  padding-bottom: 65px;
+  /* padding-bottom: 65px; */
   background: #ffffff;
   position: relative;
 }
@@ -530,6 +529,32 @@ blockquote {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/*  Why
+/*-----------------------------------------------------------------------------------*/
+.whySection {
+  height: auto;
+  padding-top: 52px;
+  padding-bottom: 65px;
+  background-color: #f7f7f7;
+}
+.whySection .contentTitle {
+  font-weight: bold;
+  font-size: 56px;
+  color: #333333;
+}
+.whySection .contentIntro {
+  font-weight: bold;
+  font-size: 40px;
+  color: #333333;
+  line-height: 98%;
+}
+.whySection .contentDesc {
+  color: #333333;
+  line-height: 98%;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
 /*  Contact Us
 /*-----------------------------------------------------------------------------------*/
 .TUIr4b{
@@ -557,7 +582,7 @@ blockquote {
 /*-----------------------------------------------------------------------------------*/
 
 #footer {
-  background: #f7f7f7;
+  background: #cb3694;
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -580,7 +605,7 @@ blockquote {
 
 #footer .socials-media ul li a {
   font-size: 24px;
-  color: #999;
+  color: #ffffff;
   letter-spacing: 0.1em;
   font-weight: 500;
   background: transparent;
@@ -593,12 +618,12 @@ blockquote {
 }
 
 #footer .socials-media ul li a:hover {
-  color: #cb3694;
-  -moz-transition: all 0.5s ease-in-out 0s;
+  color: #39489e;
+  /* -moz-transition: all 0.5s ease-in-out 0s;
   -ms-transition: all 0.5s ease-in-out 0s;
   -o-transition: all 0.5s ease-in-out 0s;
   -webkit-transition: all 0.5s ease-in-out 0s;
-  transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s; */
 }
 
 #footer p {
@@ -607,7 +632,7 @@ blockquote {
   font-weight: 500;
   margin-top: 0;
   text-transform: uppercase;
-  color: #999999;
+  color: #ffffff;
 }
 
 .credits {
