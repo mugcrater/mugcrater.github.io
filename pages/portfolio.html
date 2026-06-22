@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- meta -->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portfolio - Mugcrater</title>
+  <meta content="Web Development Services, Full-Stack Development, Bubble.io, Xano, API, OpenAI, ChatGPT, Stripe" name="keywords">
+  <meta content="Dedicated to providing Web Development Services that ensure business success. " name="description">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="../lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="../lib/hover/hover.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="../css/font-awesome.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+
+  <!-- Responsive css -->
+  <link href="../css/responsive.css" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../images/mugcrater-fabicon.png">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSG0CMFXTW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-PSG0CMFXTW');
+  </script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <!-- Main Navigation -->
+      <nav class="main-nav navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="site-logo navbar-brand" href="../index.html">
+            <img src='../images/Mugcrater Logo 1.svg' class="d-inline-block align-top" alt="Logo">
+          </a>
+          <!-- hamburger menu -->
+          <div class="d-block d-lg-none float-left">
+            <span class="openbtn" onclick="openMainNav()">&#x2630;</span>
+            <div id="hamburger-main-nav" class="sidebar">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeMainNav()">&#x2716;</a>
+              <a href="../index.html" onclick="closeMainNav()"> Home </a>
+              <a href="about.html" onclick="closeMainNav()"> About </a>
+              <a href="#portfolio" onclick="closeMainNav()"> Portfolio </a>
+              <a href="contact.html" onclick="closeMainNav()"> Contact Us </a>
+            </div>
+          </div>
+          <!-- main menu -->
+          <div class="d-none d-lg-block mainNav">
+            <nav aria-label="Horizontal" role="navigation">
+              <ul class="navbar-nav navbar-right">
+                <li>
+                  <a href="../index.html"> Home </a>
+                </li>
+                <li>
+                  <a href="about.html"> About </a>
+                </li>
+                <li>
+                  <a href="#portfolio"> Portfolio </a>
+                </li>
+                <li>
+                  <a href="contact.html"> Contact Us </a>
+                </li>
+              </ul>
+            </nav>
+          </div><!-- main menu -->
+        </div>
+      </nav><!-- //.Main Navigation -->
+    </div>
+  </header><!-- //.Header -->
+
+  <!-- Why Work with Us Section -->
+  <div class="aboutSection" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 aboutTitle">
+          <span class="contentTitle"> Portfolio </span>
+        </div>
+        <hr class="borderLineContent"></hr>
+        <div class="col-12 aboutDesc">
+          <span class="contentDesc"> Ready to embark on a collaborative journey? Let's transform your web development project into a digital masterpiece, together. </span>
+        </div>
+        <div class="col-12 aboutDesc">
+          <!-- Google Calendar Appointment Scheduling begin -->
+          <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+          <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+          <script>
+          (function() {
+            var target = document.currentScript;
+            window.addEventListener('load', function() {
+              calendar.schedulingButton.load({
+                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1CgA6jWVIIWds4o3F1P1P8PMN2cWilIqpopRyaxzUwmNRf09REJ67QyaDqjpzwPjDCyPqYXW8x?gv=true',
+                color: '#39489e',
+                label: "Book an Appointment",
+                target,
+              });
+            });
+          })();
+          </script>
+          <!-- end Google Calendar Appointment Scheduling -->
+        </div>
+      </div>
+    </div>
+  </div><!-- //.Why Work with Us Section -->
+
+  <!-- Portfolio -->
+  <!-- <div id="portfolio" class="text-center paddsection">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+          <div class="portfolio-list">
+            <ul class="nav list-unstyled" id="portfolio-flters">
+              <li class="filter filter-active" data-filter=".all">all</li>
+              <li class="filter" data-filter=".website">Website</li>
+              <li class="filter" data-filter=".webapp">Web Application</li>
+              <li class="filter" data-filter=".plugin">Plug-Ins & APIs</li>
+            </ul>
+          </div>
+          <div class="portfolio-container">
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all webapp">
+              <img src="../images/portfolio/kidly.png" alt="img"><br></br>
+              <h4>Kidly - <a href="https://kidly.app" target="_blank">Live Preview</a></h4>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all website">
+              <img src="../images/portfolio/escape.jpeg" alt="img"><br></br>
+              <h4>Escape - <a href="https://leemarkdocto.github.io/escapev2/" target="_blank">Live Preview</a></h4>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all webapp">
+              <img src="../images/portfolio/Marketplace.png" alt="img"><br></br>
+              <h4>Marketplace - <a href="https://mugcrater-marketplace.bubbleapps.io/version-test/" target="_blank">Live Preview</a></h4>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all webapp">
+              <img src="../images/portfolio/e-commerce.png" alt="img"><br></br>
+              <h4>E-Commerce - <a href="https://e-commerceplatform.bubbleapps.io/version-test/" target="_blank">Live Preview</a></h4>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all webapp">
+              <img src="../images/portfolio/Social.png" alt="img"><br></br>
+              <h4>Social Network - <a href="https://mugcrater-social-network.bubbleapps.io/version-test/" target="_blank">Live Preview</a></h4>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all website">
+              <img src="../images/portfolio/pasco.jpeg" alt="img"><br></br>
+              <h4>Pasco - <a href="https://leemarkdocto.github.io/pascov4/" target="_blank">Live Preview</a></h4>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all webapp">
+              <img src="../images/portfolio/dashboard.png" alt="img"><br></br>
+              <h4>Modern Dashboard (Kanban, Online Signature and AI) - <a href="https://online-signature.bubbleapps.io/version-test/login?view=login" target="_blank">Live Preview</a></h4>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all plugin">
+              <img src="../images/portfolio/autorefresh.png" alt="img"><br></br>
+              <h4>Auto Refresh - <a href="https://mugcraterplugin.bubbleapps.io/version-test/overview/1693920981205x402694261782609900" target="_blank">Live Preview</a></h4>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all webapp">
+              <img src="../images/portfolio/crm.png" alt="img"><br></br>
+              <h4>CRM - <a href="https://mugcrater-crm.bubbleapps.io/version-test/start?mode=signup" target="_blank">Live Preview</a></h4>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all plugin">
+              <img src="../images/portfolio/stripe-api.png" alt="img"><br></br>
+              <h4>Stripe API - <a href="https://mugcraterplugin.bubbleapps.io/version-test/stripe-api?mode=login" target="_blank">Live Preview</a></h4>
+            </div>
+            <div class="col-lg-4 col-md-6 portfolio-thumbnail all plugin">
+              <img src="../images/portfolio/xano-api.png" alt="img"><br></br>
+              <h4>Xano API - <a href="https://online-signature.bubbleapps.io/version-test/xano_api" target="_blank">Live Preview</a></h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- Portfolio -->
+
+  <!-- Portfolio -->
+  <div class="portfolioSection" id="about">
+    <div class="container">
+      <div class="row">
+        <a href="https://botmockups.com/" target="_blank"><img src="../images/portfolio/botmockups.png" alt="img"></a>
+        <div class="col-12 aboutTitle">
+          <span class="contentTitle"> Botmockups </span>
+        </div>
+        <div class="col-12 aboutDesc">
+          <span class="contentDesc">Helps marketing agencies sell more with AI chatbots powered by hyper-personalized mockups. Built with Bubble.io, Anthropic API, OpenAI, Stripe, GoHighLevel, FirstPromoter, and JavaScript.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="portfolioSection" id="about">
+    <div class="container">
+      <div class="row">
+        <img src="../images/portfolio/kidly.png" alt="img">
+        <div class="col-12 aboutTitle">
+          <span class="contentTitle"> Kidly.app </span>
+        </div>
+        <div class="col-12 aboutDesc">
+          <span class="contentDesc">Kidly.app Lighten your mental load! Discover, book, and manage all your kids' activities in one place. Built with Bubble.io, Stripe, and JavaScript.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="portfolioSection">
+    <div class="container">
+      <div class="row">
+        <img src="../images/portfolio/school1.png" alt="img">
+        <div class="col-12 aboutTitle">
+          <span class="contentTitle"> School Management </span>
+        </div>
+        <div class="col-12 aboutDesc">
+          <span class="contentDesc">An administrative system engineered to streamline school operations, curriculum mapping, and student data lifecycles. Built with a modular React architecture and Supabase, the platform features a real-time analytics dashboard that transforms complex multi-table relational data into immediate, actionable institutional insights.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="portfolioSection">
+    <div class="container">
+      <div class="row">
+        <a href="https://ai-agent-43171.bubbleapps.io/version-test/" target="_blank"><img src="../images/portfolio/AI-Agent.png" alt="img"></a>
+        <div class="col-12 aboutTitle">
+          <span class="contentTitle"> AI Agent </span>
+        </div>
+        <div class="col-12 aboutDesc">
+          <span class="contentDesc">An automated tool for booking an appointment and a powerful AI agent platform built with Bubble.io and Vapi AI.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="portfolioSection">
+    <div class="container">
+      <div class="row">
+        <a href="https://mugcrater-marketplace.bubbleapps.io/version-test/" target="_blank"><img src="../images/portfolio/Marketplace.png" alt="img"></a>
+        <div class="col-12 aboutTitle">
+          <span class="contentTitle"> Marketplace </span>
+        </div>
+        <div class="col-12 aboutDesc">
+          <span class="contentDesc">A powerful marketplace eCommerce platform built with Bubble.io, enabling seamless buying and selling with a no-code solution.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="portfolioSection">
+    <div class="container">
+      <div class="row">
+        <a href="https://e-commerceplatform.bubbleapps.io/version-test/" target="_blank"><img src="../images/portfolio/e-commerce.png" alt="img"></a>
+        <div class="col-12 aboutTitle">
+          <span class="contentTitle"> E-Commerce </span>
+        </div>
+        <div class="col-12 aboutDesc">
+          <span class="contentDesc">A dynamic eCommerce platform built with Bubble.io, offering a seamless no-code shopping experience.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="portfolioSection">
+    <div class="container">
+      <div class="row">
+        <a href="https://mugcrater-social-network.bubbleapps.io/version-test/" target="_blank"><img src="../images/portfolio/Social.png" alt="img"></a>
+        <div class="col-12 aboutTitle">
+          <span class="contentTitle"> Social Network </span>
+        </div>
+        <div class="col-12 aboutDesc">
+          <span class="contentDesc">A social network built with Bubble.io, connecting people through a seamless no-code experience.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="portfolioSection">
+    <div class="container">
+      <div class="row">
+        <a href="https://online-signature.bubbleapps.io/version-test/login?view=login" target="_blank"><img src="../images/portfolio/dashboard.png" alt="img"></a>
+        <div class="col-12 aboutTitle">
+          <span class="contentTitle"> Modern Dashboard</span>
+        </div>
+        <div class="col-12 aboutDesc">
+          <span class="contentDesc">A Modern Dashboard built with Bubble.io and OpenAI, featuring Kanban boards, online signatures, and AI-powered tools for seamless productivity.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="portfolioSection">
+    <div class="container">
+      <div class="row">
+        <a href="https://mugcrater-crm.bubbleapps.io/version-test/start?mode=signup" target="_blank"><img src="../images/portfolio/crm.png" alt="img"></a>
+        <div class="col-12 aboutTitle">
+          <span class="contentTitle">CRM</span>
+        </div>
+        <div class="col-12 aboutDesc">
+          <span class="contentDesc">A CRM built with Bubble.io, designed for seamless customer management.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="portfolioSection">
+    <div class="container">
+      <div class="row">
+        <a href="https://mugcraterplugin.bubbleapps.io/version-test/stripe-api?mode=login" target="_blank"><img src="../images/portfolio/stripe-api.png" alt="img"></a>
+        <div class="col-12 aboutTitle">
+          <span class="contentTitle">Stripe API</span>
+        </div>
+        <div class="col-12 aboutDesc">
+          <span class="contentDesc">A Stripe API integration built with Bubble.io, enabling seamless payment processing and subscription management without code.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="portfolioSection">
+    <div class="container">
+      <div class="row">
+        <a href="https://online-signature.bubbleapps.io/version-test/xano_api" target="_blank"><img src="../images/portfolio/xano-api.png" alt="img"></a>
+        <div class="col-12 aboutTitle">
+          <span class="contentTitle">Xano API</span>
+        </div>
+        <div class="col-12 aboutDesc">
+          <span class="contentDesc">A powerful Xano API integration built with Bubble.io, enabling scalable backend operations with a no-code approach.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //.Portfolio -->
+
+  <!-- start section footer -->
+  <div id="footer" class="text-center">
+    <div class="container">
+      <div class="socials-media text-center">
+        <ul class="list-unstyled">
+          <li><a href="https://www.linkedin.com/company/mugcrater" target="_blank"><i class="ion-social-linkedin"></i></a>
+          </li>
+          <li><a href="https://www.instagram.com/mugcrater" target="_blank"><i class="ion-social-instagram"></i></a>
+          </li>
+          <li><a href="mailto:leemarkdocto@mugcrater.com"><i class="ion-ios-email"></i></a>
+          </li>
+        </ul>
+        <p>&copy; 2024 Mugcrater Web Development Services</p>
+      </div>
+    </div>
+  </div>
+  <!-- End section footer -->
+
+  <!-- JavaScript Libraries -->
+  <script src="../lib/jquery/jquery.min.js"></script>
+  <script src="../lib/jquery/jquery-migrate.min.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../lib/typed/typed.js"></script>
+  <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="../lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="../lib/isotope/isotope.pkgd.min.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="../js/main.js"></script>
+
+</body>
+</html>

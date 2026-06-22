@@ -1,0 +1,369 @@
+@charset "utf-8";
+
+/***********************************************************
+*													       *
+* 	  	   		RESETS AND DEFAULTS STYLES                 *
+*														   *
+ ***********************************************************/
+html, body{ height: 100%; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul{
+	margin: 0;
+	padding: 0;
+	list-style: none; 
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/***********************************************************
+ *														   *
+ * 	  	   DEFAULTS, TYPOGRAPHTY AND GLOBAL STYLES         *
+ *														   *
+ ***********************************************************/
+@font-face {
+	font-family: cubanoReg;
+	src: url(../fonts/Cubano_reg.otf);
+}
+@font-face {
+	font-family: brandonReg;
+	src: url(../fonts/Brandon_reg.otf);
+}
+@font-face {
+	font-family: brandonLig;
+	src: url(../fonts/Brandon_thin.otf);
+}
+@font-face {
+	font-family: brandonMed;
+	src: url(../fonts/Brandon_med.otf);
+}
+@font-face {
+	font-family: brandonBld;
+	src: url(../fonts/Brandon_bld.otf);
+}
+body{
+	background-color: #f5f5f5;
+	font-family: 'brandonReg', sans-serif;
+	color: #000;
+	font-size: 14px;
+}
+
+
+/************************************
+ * 			Typography              		*
+ ************************************/
+h1, h2, h3, h4, h5, h6{
+	font-family: 'brandonReg', sans-serif;
+}
+h1{font-size: 60px; line-height: 50px; }
+h2{font-size: 32px; line-height: 42px; }
+h3{font-size: 22px; line-height: 100%;}
+h4{font-size: 16px; line-height: 100%;}
+h5{font-size: 14px;}
+h6{font-size: 12px;}
+p, ol li, ul li, blockquote{
+	font-size: 18px; line-height: 100%; color: #000;
+}
+
+
+/************************************
+ * 			Section CSS Styles      		*
+ ************************************/
+.bg-black{ background-color: #000; }
+.img-holder{
+	background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+}
+
+
+/******************************
+ * Header                     *
+ *****************************/
+.header{
+	margin: 25px 0px 0px 0px;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+}
+.main-nav .navbar-brand img{ margin: 5px 0px 0px 0px; }
+.navbar-brand span{
+	font-family: 'cubanoReg', sans-serif;
+	font-size: 25px;
+	color: #ffffff;
+}
+.main-nav ul a{
+	font-size: 18px;
+	color: #ffffff;
+}
+
+/* SideBar */
+.hamburger-menu span{ color: #ffffff; }
+.hamburger-menu span::before{ 
+	content: "\f0c9";
+	font-size: 30px; 
+	cursor: pointer;
+}
+.sidebar {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: #333;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+	text-align: center;
+}
+.sidebar a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #ffffff;
+	display: block;
+	transition: 0.3s;
+}
+.sidebar a:hover{ color: #f1f1f1; }
+.sidebar .closebtn {
+	position: absolute;
+	top: 30px;
+	right: 25px;
+	font-size: 35px;
+	margin-left: 50px;
+}
+
+.carousel img{  min-width: 100%; }
+.carousel-caption{
+	padding: 15% 0% 0% 0%;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: rgba(3, 3, 3, 0.4);
+}
+.carousel-content{ padding: 10px; }
+.banner-font-light{
+	font-family: 'brandonLig', sans-serif;
+	font-size: 32px;
+}
+.banner-font-bold{
+	margin: 40px 0px 80px 0px;
+	font-family: 'brandonBld', sans-serif;
+	font-size: 66px;
+	text-transform: uppercase;
+}
+.banner-btn{
+	padding: 20px 66px 20px 66px;
+	font-family: 'brandonBld', sans-serif;
+	font-size: 23px;
+	color: #ffffff;
+	border: 3px solid #ffffff;
+	border-radius: 3px;
+}
+.banner-btn:hover{
+	color: #ffffff;
+	text-decoration: none;
+}
+
+
+/******************************
+ * Body                       *
+ *****************************/
+.contentOne{ background-color: #ffffff; }
+.contentOne .row { padding: 60px 0px 60px 0px; }
+.contentOne .col-lg-8 h1{
+	margin: 0px 0px 40px 0px;
+	font-weight: bolder;
+	font-family: 'brandonLig', sans-serif;
+}
+.contentOne .col-lg-8 b{ font-family: 'brandonReg', sans-serif; }
+.contentOne .col-lg-8 p{ color: #666666; }
+.contentTwo { background-color: #efefef; }
+.contentTwo .row { padding: 60px 0px 60px 0px; }
+.contentTwo .col-lg-8 h1{
+	margin: 0px 0px 40px 0px;
+	font-weight: bolder;
+	font-family: 'brandonLig', sans-serif;
+}
+.contentTwo .col-lg-8 b{ font-family: 'brandonReg', sans-serif; }
+.contentTwo .col-lg-8 p{ color: #666666; }
+.contentThree{ background-color: #ffffff; }
+.contentThree .row{ padding: 50px 0px 20px 0px; }
+.contentThree .media { margin: 0px 0px 55px 0px; }
+.contentThree .media .media-body{
+	margin: auto;
+	padding: 0px 0px 0px 20px;
+}
+.contentThree .media p{
+	padding: 15px 0px 0px 0px;
+	color: #666666;
+	line-height: 1.3;
+}
+.contentThree .media img{
+	width: 70px;
+	height: 70px;
+	background-color: #000000;
+	border-radius: 500px;
+	object-fit: cover;
+}
+.contentFour {
+	padding: 60px 0px 60px 0px;
+	background-color: #efefef;
+}
+.contentFour .col-lg-4 img{
+	width: 220px;
+	height: 220px;
+	object-fit: cover;
+}
+.contentFour .col-lg-8{
+	margin: auto;
+	background-color: #ffffff;
+}
+.contentFour .mx-auto h1{
+	margin: 0px 0px 40px 0px;
+	font-weight: bolder;
+	font-family: 'brandonLig', sans-serif;
+}
+.contentFour .mx-auto b{ font-family: 'brandonReg', sans-serif; }
+.contentFour .left-quote:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 15px solid transparent;
+	border-right-color: #ffffff;
+	border-left: 0;
+	margin-top: -15px;
+	margin-left: -15px;
+}
+.contentFour .right-quote:before {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 15px solid transparent;
+	border-left-color: #ffffff;
+	border-right: 0;
+	margin-top: -15px;
+	margin-right: -15px;
+}
+.contentFour h3{
+	margin: 25px 0px 0px 0px;
+	color: #666666;
+	font-size: 26px;
+	line-height: 1.3;
+}
+.contentFour .col-lg-8 h3{ margin: 20px 0px 0px 50px; }
+.contentFour p{
+	margin: 15px 0px 25px 50px;
+	color: #6699cc;
+	font-size: 20px;
+}
+.contentFive{
+	padding: 60px 0px 60px 0px;
+	background-color: #ffffff;
+}
+.contentFive .col-lg-3 img{ margin: 10px 0px 10px 0px; }
+.contentSix{
+	padding: 60px 0px 60px 0px;
+	background-color: #000000;
+}
+.contentSix h1{
+	margin: 40px 0px 30px 0px;
+	font-weight: bolder;
+	font-family: 'brandonLig', sans-serif;
+	color: #ffffff;
+}
+.contentSix b{ font-family: 'brandonReg', sans-serif; }
+.contentSix h3{ color: #666666; }
+.contentSix .team-img .col-lg-4{ margin: 60px 0px 0px 0px; }
+.contentSix .col-lg-4 img{
+	width: 220px;
+	height: 220px;
+	object-fit: cover;
+	border: 2px solid #ffffff;
+	border-radius: 500px;
+}
+.contentSix .col-lg-4 p{
+	margin: 10px 0px 0px 0px;
+	color: #ffffff;
+}
+.contentSix .col-lg-4 .team-pos{ color: #666666 }
+.contentSix .mx-auto h3{ margin: 55px 0px 20px 0px; }
+.contentSix .media{ justify-content: center; }
+.contentSix .media i{
+	margin: 5px;
+	padding: 10px;
+	border: 2px solid;
+	border-radius: 100%;
+}
+
+
+/******************************
+ * Footer                     *
+ *****************************/
+.footer{ background-color: #6699cc; }
+.footer .col-lg-6{ margin: 100px 0px 100px 0px; }
+.footer .col-lg-6 h1{ 
+	margin: 0px 0px 40px 0px;
+	font-weight: bolder;
+	font-family: 'brandonLig', sans-serif;
+	color: #ffffff; 
+}
+.footer .col-lg-6 b{ font-family: 'brandonReg', sans-serif; }
+.footer .col-lg-6 p{ 
+	margin: 40px 0px 0px 0px;
+	color: #ffffff; 
+	line-height: 1.5;
+}
+.footer .col-6 i{ font-size: 28px; }
+.footer .copyright p{
+	padding: 40px 0px 40px 0px;
+	font-size: 16px;
+	color: #ffffff;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.form-control::-webkit-input-placeholder { color: #cccccc; }  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: #cccccc; }  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: #cccccc; }  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: #cccccc; }  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color: #cccccc; }  /* Microsoft Edge */
