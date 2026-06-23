@@ -5,7 +5,7 @@
   Author URL: https://bootstrapmade.com
 */
 
-/* General Styling
+/*  General Styling
 /*-----------------------------------------------------------------------------------*/
 html,
 body {
@@ -135,10 +135,18 @@ table {
 }
 
 /***********************************************************
-  * *
-  * DEFAULTS, TYPOGRAPHY AND GLOBAL STYLES         *
-  * *
+  *														   *
+  * 	  	   DEFAULTS, TYPOGRAPHTY AND GLOBAL STYLES         *
+  *														   *
   ***********************************************************/
+@font-face {
+  font-family: Jost_Reg;
+  src: url(../fonts/Jost_Reg.ttf);
+}
+@font-face {
+  font-family: Jost_Reg;
+  src: url(../fonts/Jost_Reg.ttf);
+}
 @font-face {
   font-family: Jost_Reg;
   src: url(../fonts/Jost_Reg.ttf);
@@ -151,7 +159,7 @@ body {
 }
 
 /************************************
-  * Typography                  *
+  * 			Typography              		*
   ************************************/
 h1,
 h2,
@@ -246,6 +254,11 @@ a {
   top: 0px;
 }
 .header li {
+  /* margin: auto;
+   text-decoration: none;
+   width: auto;
+   border: 1px solid red; */
+
   margin: 0px 7px 0px 7px;
   text-decoration: none;
 }
@@ -407,7 +420,7 @@ a {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* About Us
+/*  About Us
 /*-----------------------------------------------------------------------------------*/
 .borderLineContentWht {
   width: 52px;
@@ -478,10 +491,11 @@ a {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* Portfolio
+/*  Portfolio
 /*-----------------------------------------------------------------------------------*/
 #portfolio {
   padding-top: 52px;
+  /* padding-bottom: 65px; */
   background: #ffffff;
   position: relative;
 }
@@ -506,12 +520,20 @@ a {
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: capitalize;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
   transition: all 0.5s ease-in-out 0s;
 }
 
 #portfolio .portfolio-list .nav li:hover,
 #portfolio .portfolio-list .nav li.filter-active {
   color: #cb3694;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
   transition: all 0.5s ease-in-out 0s;
 }
 
@@ -562,86 +584,13 @@ a {
   line-height: 110%;
 }
 
-/* Framework container for single image or carousel to hold the offset border shadows */
-.portfolio-card-frame {
-  position: relative;
-  overflow: visible;
-  margin-bottom: 35px;
-  background: transparent;
-}
-
-/* Strips native shadow properties away, standardizing element widths across single views/carousels */
-.portfolio-card-frame img {
-  box-shadow: none !important;
+.portfolioSection img {
   width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Round inner box bounding framework */
-.portfolio-card-frame .portfolio-inner-wrap,
-.portfolio-card-frame .carousel-inner {
-  border: 1px solid #333333;
-  border-radius: 8px;
-  overflow: hidden;
-  z-index: 3;
-  position: relative;
-  background: #ffffff;
-}
-
-/* Double Layered Offset Outline Frames (Based directly on image_0a1479.jpg design) */
-.portfolio-card-frame::before,
-.portfolio-card-frame::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  z-index: 1;
-  pointer-events: none;
-}
-.portfolio-card-frame::before {
-  border: 1px solid #cb3694cc;
-  transform: translate(6px, 6px);
-}
-.portfolio-card-frame::after {
-  border: 1px solid #cb369466;
-  transform: translate(12px, 12px);
-}
-
-/* Carousel Control UI Rules */
-.portfolio-card-frame .carousel-control-prev,
-.portfolio-card-frame .carousel-control-next {
-  width: 6%;
-  opacity: 0;
-  z-index: 4;
-  transition: opacity 0.3s ease;
-  background: rgba(0, 0, 0, 0.03);
-}
-.portfolio-card-frame:hover .carousel-control-prev,
-.portfolio-card-frame:hover .carousel-control-next {
-  opacity: 1;
-}
-.portfolio-card-frame .carousel-control-prev-icon,
-.portfolio-card-frame .carousel-control-next-icon {
-  filter: invert(1) grayscale(100);
-  width: 24px;
-  height: 24px;
-}
-.portfolio-card-frame .carousel-indicators {
-  z-index: 5;
-  margin-bottom: 10px;
-}
-.portfolio-card-frame .carousel-indicators li {
-  background-color: rgba(51, 51, 51, 0.4);
-  border: none;
-  width: 12px;
-  height: 3px;
-}
-.portfolio-card-frame .carousel-indicators .active {
-  background-color: #cb3694;
+  box-shadow: #cb369466 5px 5px,  
+            #cb36944D 10px 10px,  
+            #cb369433 15px 15px,  
+            #cb369419 20px 20px,  
+            #cb36940D 25px 25px;
 }
 
 .portfolioSection .contentBtn a{
@@ -649,11 +598,12 @@ a {
   background: #333333;
   padding: 10px 35px 10px 35px;
 }
+
 .portfolioSection .contentBtn a:link {
   text-decoration: none;
 }
 /*-----------------------------------------------------------------------------------*/
-/* Why
+/*  Why
 /*-----------------------------------------------------------------------------------*/
 .contentSectionWhiteGrey {
   height: auto;
@@ -677,8 +627,9 @@ a {
   line-height: 98%;
 }
 
+
 /*-----------------------------------------------------------------------------------*/
-/* Contact Us
+/*  Contact Us
 /*-----------------------------------------------------------------------------------*/
 .aboutDesc button{
   padding: 10px 35px 10px 35px !important;
@@ -698,27 +649,32 @@ a {
   text-decoration: none !important;
 }
 
+
 /*-----------------------------------------------------------------------------------*/
-/* Footer
+/*  Footer
 /*-----------------------------------------------------------------------------------*/
 #footer {
   background: #cb3694;
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
 #footer .socials-media {
   width: 100%;
 }
+
 #footer .socials-media ul {
   display: inline-block;
   float: none;
   margin: 0 0 20px 0;
 }
+
 #footer .socials-media ul li {
   float: left;
   margin-left: 10px;
   margin-right: 10px;
 }
+
 #footer .socials-media ul li a {
   font-size: 24px;
   color: #ffffff;
@@ -726,14 +682,26 @@ a {
   font-weight: 500;
   background: transparent;
   text-transform: uppercase;
+  -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
   transition: all 0.5s ease-in-out 0s;
 }
+
 #footer .socials-media ul li a:hover {
   color: #39489e;
+  /* -moz-transition: all 0.5s ease-in-out 0s;
+  -ms-transition: all 0.5s ease-in-out 0s;
+  -o-transition: all 0.5s ease-in-out 0s;
+  -webkit-transition: all 0.5s ease-in-out 0s;
+  transition: all 0.5s ease-in-out 0s; */
 }
+
 #footer .ion-ios-email:before {
   font-size: 33px;
 }
+
 #footer p {
   font-size: 12px;
   letter-spacing: 0.1em;
@@ -742,6 +710,7 @@ a {
   text-transform: uppercase;
   color: #ffffff;
 }
+
 .credits {
   font-size: 13px;
 }
