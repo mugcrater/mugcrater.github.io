@@ -2,31 +2,23 @@
 <html lang="en">
 
 <head>
-  <!-- meta -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Mugcrater</title>
-  <meta content="Web Development Services, Full-Stack Development, Bubble.io, Xano, API, OpenAI, ChatGPT, Stripe" name="keywords">
-  <meta content="Dedicated to providing Web Development Services that ensure business success. " name="description">
+  <title>Mugcrater | Modern Web Application & AI Development</title>
+  <meta content="Web Development Services, Full-Stack Development, Bubble.io, Xano, React, Supabase, OpenAI, Stripe" name="keywords">
+  <meta content="Architecting high-performance, AI-driven web applications with modern engineering and rapid execution." name="description">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Jost:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Bootstrap CSS File -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Libraries CSS Files -->
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
-  <link href="lib/hover/hover.min.css" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
+  <!-- Main Stylesheet Files -->
   <link href="css/font-awesome.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
-
-  <!-- Responsive css -->
   <link href="css/responsive.css" rel="stylesheet">
 
   <!-- Favicon -->
@@ -38,294 +30,454 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-PSG0CMFXTW');
   </script>
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- Mobile Sidebar Overlay Backdrop -->
+  <div id="sidebar-overlay" class="sidebar-overlay" onclick="closeMainNav()"></div>
+
+  <!-- Sidebar Navigation Drawer -->
+  <aside id="hamburger-main-nav" class="sidebar" aria-hidden="true">
+    <div class="sidebar-header">
+      <a href="#home" onclick="closeMainNav()" class="sidebar-logo-link">
+        <img src="images/Mugcrater Logo 1.svg" alt="Mugcrater Logo" class="sidebar-logo">
+      </a>
+      <button class="closebtn" onclick="closeMainNav()" aria-label="Close Navigation">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <ul class="sidebar-links">
+        <li>
+          <a href="#home" class="sidebar-link">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#about" class="sidebar-link">
+            <i class="fa-solid fa-circle-nodes"></i>
+            <span>About</span>
+          </a>
+        </li>
+        <li>
+          <a href="#portfolio" class="sidebar-link">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Portfolio</span>
+          </a>
+        </li>
+      </ul>
+    
+      <div class="sidebar-footer">
+        <a href="#contact" onclick="closeMainNav()" class="sidebar-cta-btn">
+          <span>Book Consultation</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Header Navigation -->
   <header class="header" id="header">
     <div class="container">
-      <!-- Main Navigation -->
       <nav class="main-nav navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="site-logo navbar-brand" href="#">
-            <img src='images/Mugcrater Logo 1.svg' class="d-inline-block align-top" alt="Logo">
-          </a>
-          <!-- hamburger menu -->
-          <div class="d-block d-lg-none float-left">
-            <span class="openbtn" onclick="openMainNav()">&#x2630;</span>
-            <div id="hamburger-main-nav" class="sidebar">
-              <a href="javascript:void(0)" class="closebtn" onclick="closeMainNav()">&#x2716;</a>
-              <a href="#home" onclick="closeMainNav()"> Home </a>
-              <a href="pages/about.html" onclick="closeMainNav()"> About </a>
-              <a href="pages/portfolio.html" onclick="closeMainNav()"> Portfolio </a>
-              <a href="pages/contact.html" onclick="closeMainNav()"> Contact Us </a>
-            </div>
-          </div>
-          <!-- main menu -->
-          <div class="d-none d-lg-block mainNav">
-            <nav aria-label="Horizontal" role="navigation">
-              <ul class="navbar-nav navbar-right">
-                <li>
-                  <a href="#home"> Home </a>
-                </li>
-                <li>
-                  <a href="pages/about.html"> About </a>
-                </li>
-                <li>
-                  <a href="pages/portfolio.html"> Portfolio </a>
-                </li>
-                <li>
-                  <a href="pages/contact.html"> Contact Us </a>
-                </li>
-              </ul>
-            </nav>
-          </div><!-- main menu -->
+        <a class="site-logo navbar-brand" href="#home">
+          <img src="images/Mugcrater Logo 1.svg" alt="Mugcrater Logo">
+        </a>
+        
+        <!-- Mobile Toggle Button -->
+        <div class="d-block d-lg-none ml-auto">
+          <button class="openbtn" id="openNavBtn" onclick="openMainNav()" aria-label="Open Navigation" aria-expanded="false" aria-controls="hamburger-main-nav">
+            <i class="fa-solid fa-bars-staggered nav-icon"></i>
+          </button>
         </div>
-      </nav><!-- //.Main Navigation -->
-    </div>
-  </header><!-- //.Header -->
 
-  <!-- Custom Banner -->
-  <div class="carousel slide" id="Home">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="carousel-caption gradientColor">
+        <!-- Desktop Navigation -->
+        <div class="d-none d-lg-block ml-auto mainNav">
+          <ul class="navbar-nav align-items-center">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a href="#contact" class="nav-cta-btn">Book Consultation</a></li>
+          </ul>
         </div>
-        <img class="d-block" src='images/banner-mugcrater.png' />
-        <div class="container">
-          <div class="carousel-caption d-flex h-100 align-items-center labelBanner">
-            <div class="carousel-content">
-              <div class="row">
-                <div class="col-lg-7 order-lg-1 contentRight">
-                  <div class="tagLineMinor1Class">
-                    <span class="tagLineMinor1"> Brewing <span class="typed"></span> </span>
-                  </div>
-                  <hr class="tagLineMinor1Class borderLine"></hr>
-                </div>
-                <div class="col-lg-7 order-lg-1 contentLeft">
-                  <div class="tagLineMinorClass">
-                    <span class="tagLineMinor"> Let's have a cup of coffee. </span>
-                  </div>
-                  <div class="col contentBtn">
-                    <a class="bannerBtn" href="#contact"> Get in touch </a>
-                  </div>
-                </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Banner Section -->
+  <section class="hero-section" id="home">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+
+    <div class="container position-relative z-index-2">
+      <div class="row align-items-center">
+        <!-- Left Side: Copy & Calls to Action -->
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          
+          <div class="hero-eyebrow">
+            <span class="status-pulse"></span>
+            <span>No-Code Speed × Full-Stack Engineering</span>
+          </div>
+          
+          <h1 class="hero-title">
+            Architecting High-Performance, <span class="text-gradient">AI-Driven Web Apps</span>
+          </h1>
+          
+          <p class="hero-subtitle">
+            Transforming business logic into scalable SaaS engines, AI automation, and bespoke web platforms using Bubble.io, React, Supabase, and OpenAI.
+          </p>
+          
+          <div class="hero-cta-group">
+            <a class="btn-hero-primary" href="#contact">
+              Start Your Project <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+            <a class="btn-hero-secondary" href="#portfolio">
+              <i class="fa fa-code mr-2"></i> Explore Builds
+            </a>
+          </div>
+          
+        </div>
+
+        <!-- Right Side: Tech Image Showcase in UI Frame -->
+        <div class="col-lg-6">
+          <div class="hero-media-wrapper">
+            <div class="hero-window-frame">
+              <div class="window-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="window-title">https://schoolmanagement.com/</span>
               </div>
+              <div class="window-body">
+                <img src="images/portfolio/school1.png" alt="Modern Web Design Showcase" class="img-fluid hero-app-image">
+              </div>
+            </div>
+
+            <div class="floating-badge badge-top-right">
+              <i class="fa fa-bolt text-warning mr-2"></i> 10x Launch Speed
+            </div>
+
+            <div class="floating-badge badge-bottom-left">
+              <i class="fa fa-check-circle text-success mr-2"></i> AI Native Stack
             </div>
           </div>
         </div>
       </div>
+      
+      <!-- Modern Metrics Grid -->
+      <div class="row metrics-grid">
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="metric-glass-card">
+            <div class="metric-header">
+              <span class="metric-num">10x</span>
+              <span class="metric-badge">Speed</span>
+            </div>
+            <div class="metric-title">Faster Time to Market</div>
+            <p class="metric-desc">Deploy MVPs to production in weeks, not months.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3 mb-md-0">
+          <div class="metric-glass-card">
+            <div class="metric-header">
+              <span class="metric-num">100%</span>
+              <span class="metric-badge">Custom</span>
+            </div>
+            <div class="metric-title">Scalable Architecture</div>
+            <p class="metric-desc">Clean backends, API integrations, and resilient pipelines.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="metric-glass-card">
+            <div class="metric-header">
+              <span class="metric-num">AI-Native</span>
+              <span class="metric-badge">Smart</span>
+            </div>
+            <div class="metric-title">LLM & Automation Stack</div>
+            <p class="metric-desc">OpenAI, Anthropic, Vector DBs, and Custom Agents.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div><!-- //.Custom Banner -->
+  </section>
 
   <!-- About Section -->
-  <div class="contentSectionGrey" id="about">
+  <section class="contentSectionGrey" id="about">
     <div class="container">
       <div class="row">
-        <div class="col-12 aboutIntro">
-          <span class="contentIntro"> Where No-Code Speed Meets Engineering Precision. Architecting Complex, AI-Driven Bubble.io Apps with Professional-Grade Scalability. </span>
+        <div class="col-12 text-center mb-3">
+          <span class="contentIntro">Where Rapid Execution Meets Enterprise Reliability</span>
         </div>
-        <hr class="borderLineContent"></hr>
-        <div class="col-12 aboutDesc">
-          <span class="contentDesc"> Create custom web applications, Design and set up databases, Plan and implement strategies for scaling web applications and more. </span>
+        <div class="col-12 text-center">
+          <p class="contentDesc">Helping startups, agencies, and enterprise businesses launch production-ready applications in weeks—not months. Whether building complex multi-tenant SaaS engines or integrating bespoke LLM workflows, combine modern front-end engineering with scalable infrastructure.</p>
         </div>
       </div>
     </div>
-  </div><!-- //.About Us -->
+  </section>
 
-  <!-- Portfolio -->
-  <div class="portfolioSection">
+  <!-- Portfolio Section -->
+  <section class="portfolioSection" id="portfolio">
     <div class="container">
-      <div class="row">
-        <div class="col-12" style="padding-right: 25px; padding-bottom: 20px;">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="contentTitle">Featured Applications</h2>
+          <p class="section-subtitle">Real-world web apps engineered for scale, speed, and efficiency.</p>
+        </div>
+      </div>
+
+      <!-- Portfolio Card 1: Botmockups -->
+      <div class="row portfolio-item-row align-items-center">
+        <div class="col-lg-7 mb-4 mb-lg-0">
           <div class="portfolio-card-frame">
             <div class="portfolio-inner-wrap">
-              <a href="https://botmockups.com/" target="_blank"><img src="images/portfolio/botmockups.png" alt="Botmockups View"></a>
+              <a href="https://botmockups.com/" target="_blank" rel="noopener">
+                <img src="images/portfolio/botmockups.png" alt="Botmockups View" class="img-fluid">
+              </a>
             </div>
           </div>
         </div>
-        <div class="col-12 aboutTitle">
-          <span class="contentTitle"> Botmockups </span>
-        </div>
-        <div class="col-12 aboutDesc">
-          <span class="contentDesc">Helps marketing agencies sell more with AI chatbots powered by hyper-personalized mockups. Built with Bubble.io, Anthropic API, OpenAI, Stripe, GoHighLevel, FirstPromoter, and JavaScript.</span>
+        <div class="col-lg-5">
+          <h3 class="portfolio-title">Botmockups</h3>
+          <p class="portfolio-tech-stack">Bubble.io • Anthropic API • OpenAI • Stripe • GoHighLevel</p>
+          <p class="portfolio-desc">Helps marketing agencies sell more with AI chatbots powered by hyper-personalized mockups and automated sales demos.</p>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="portfolioSection">
-    <div class="container">
-      <div class="row">
-        <div class="col-12" style="padding-right: 25px; padding-bottom: 20px;">
+      <!-- Portfolio Card 2: NRA -->
+      <div class="row portfolio-item-row align-items-center">
+        <div class="col-lg-7 order-lg-2 mb-4 mb-lg-0">
           <div class="portfolio-card-frame">
             <div class="portfolio-inner-wrap">
-              <a href="https://www.linkedin.com/company/kidlyapp/" target="_blank"><img src="images/portfolio/kidly.png" alt="Kidly View"></a>
+              <a href="https://nraelectricalengineeringservices.com/" target="_blank" rel="noopener">
+                <img src="images/portfolio/NRA.png" alt="NRA" class="img-fluid">
+              </a>
             </div>
           </div>
         </div>
-        <div class="col-12 aboutTitle">
-          <span class="contentTitle"> Kidly.app </span>
-        </div>
-        <div class="col-12 aboutDesc">
-          <span class="contentDesc">Kidly.app Lighten your mental load! Discover, book, and manage all your kids' activities in one place. Built with Bubble.io, Stripe, and JavaScript.</span>
+        <div class="col-lg-5 order-lg-1">
+          <h3 class="portfolio-title">NRA Electrical Engineering Services</h3>
+          <p class="portfolio-tech-stack">SEO • Company Website</p>
+          <p class="portfolio-desc">Specialized electrical solutions provider committed to delivering high-quality, reliable, and safe engineering services tailored to your specific needs.</p>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="portfolioSection">
-    <div class="container">
-      <div class="row">
-        <div class="col-12" style="padding-right: 25px; padding-bottom: 20px;">
+      <!-- Portfolio Card 3: School Management System -->
+      <div class="row portfolio-item-row align-items-center">
+        <div class="col-lg-7 mb-4 mb-lg-0">
           <div id="carouselSchool" class="carousel slide portfolio-card-frame" data-ride="carousel" data-interval="false">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselSchool" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselSchool" data-slide-to="1"></li>
-              <li data-target="#carouselSchool" data-slide-to="2"></li>
-              <li data-target="#carouselSchool" data-slide-to="3"></li>
-              <li data-target="#carouselSchool" data-slide-to="4"></li>
-              <li data-target="#carouselSchool" data-slide-to="5"></li>
-              <li data-target="#carouselSchool" data-slide-to="6"></li>
-            </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img class="d-block w-100" src="images/portfolio/school1.png" alt="School Management View 1">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/portfolio/school2.png" alt="School Management View 2">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/portfolio/school3.png" alt="School Management View 3">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/portfolio/school4.png" alt="School Management View 4">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/portfolio/school5.png" alt="School Management View 5">
-              </div>
-              <div class="carousel-item">
-                <img class="d-block w-100" src="images/portfolio/school6.png" alt="School Management View 6">
-              </div>
+              <div class="carousel-item active"><img class="d-block w-100" src="images/portfolio/school1.png" alt="School View 1"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="images/portfolio/school2.png" alt="School View 2"></div>
+              <div class="carousel-item"><img class="d-block w-100" src="images/portfolio/school3.png" alt="School View 3"></div>
             </div>
-            <a class="carousel-control-prev" href="#carouselSchool" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
+            <a class="carousel-control-prev" href="#carouselSchool" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+            <a class="carousel-control-next" href="#carouselSchool" role="button" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <h3 class="portfolio-title">School Management System</h3>
+          <p class="portfolio-tech-stack">React • Supabase • Analytics Engine</p>
+          <p class="portfolio-desc">An administrative operating platform designed to streamline school operations, curriculum mapping, and student data lifecycles in real time.</p>
+        </div>
+      </div>
+
+      <!-- Portfolio Card 4: Kidly.app -->
+      <div class="row portfolio-item-row align-items-center">
+        <div class="col-lg-7 order-lg-2 mb-4 mb-lg-0">
+          <div class="portfolio-card-frame">
+            <div class="portfolio-inner-wrap">
+              <a href="https://www.linkedin.com/company/kidlyapp/" target="_blank" rel="noopener">
+                <img src="images/portfolio/kidly.png" alt="Kidly View" class="img-fluid">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 order-lg-1">
+          <h3 class="portfolio-title">Kidly.app</h3>
+          <p class="portfolio-tech-stack">Bubble.io • Stripe • Custom JS Integration</p>
+          <p class="portfolio-desc">Discover, book, and manage all your kids' activities in one place with a centralized marketplace and scheduling engine.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lead Capture & Contact Section -->
+  <section class="contentSectionGrey" id="contact">
+    <div class="container">
+      <div class="row text-center mb-5">
+        <div class="col-12">
+          <h2 class="contentTitle text-white">Start Your Project</h2>
+          <p class="text-slate-400">Request a custom proposal or schedule a direct consultation.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- Multi-Step Interactive Intake Form -->
+        <div class="col-lg-6 mb-4">
+          <div class="lead-intake-card">
+            <h3>Tell Us About Your Project</h3>
+            <p class="card-sub-desc">Answer 1 quick question to help me understand your needs.</p>
+        
+            <form id="interactiveLeadForm" action="https://formsubmit.co/ajax/mugcrater@gmail.com" method="POST" onsubmit="handleLeadSubmit(event)">
+              
+              <input type="hidden" name="_subject" value="New Project Inquiry - Mugcrater">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="project_type" id="selectedProjectType" value="">
+
+              <!-- Step 1: Application Type -->
+              <div id="formStep1" class="form-step">
+                <label class="form-label">1. What type of application are you building?</label>
+                <div class="option-grid">
+                  <button type="button" class="option-card" onclick="selectLeadOption('Custom Web App / SaaS')">
+                    <strong>Custom Web App / SaaS</strong>
+                  </button>
+                  <button type="button" class="option-card" onclick="selectLeadOption('AI & Automation Tool')">
+                    <strong>AI & Automation Tool</strong>
+                  </button>
+                </div>
+              </div>
+        
+              <!-- Step 2: Contact Details & Message -->
+              <div id="formStep2" class="form-step d-none">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <label class="form-label mb-0">2. Leave us a message!</label>
+                  <button type="button" class="btn btn-link btn-sm text-slate-400 p-0" onclick="resetFormSteps()">← Change Service</button>
+                </div>
+                <input type="text" name="name" id="leadName" placeholder="Your Name" class="form-control mb-3" required>
+                <input type="email" name="email" id="leadEmail" placeholder="Work Email Address" class="form-control mb-3" required>
+                <textarea name="message" id="leadMessage" placeholder="Briefly describe your project or message..." class="form-control mb-3" rows="3" required></textarea>
+                
+                <div id="formErrorMsg" class="text-danger mb-2 d-none" style="font-size: 14px;">Please fill in all required fields accurately.</div>
+                
+                <button type="submit" id="submitBtn" class="btn-hero-primary w-100 justify-content-center">
+                  Send Message →
+                </button>
+              </div>
+            </form>
+        
+            <!-- Success Confirmation Screen -->
+            <div id="leadSuccessMsg" class="d-none text-center py-4">
+              <h4 class="text-success font-weight-bold mb-2">Message Sent Successfully!</h4>
+              <p class="text-white">We've received your email and will reach out to you within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Calendar Direct Booking -->
+        <div class="col-lg-6 mb-4">
+          <div class="calendar-card text-center">
+            <h3>Or Book a Discovery Call</h3>
+            <p class="card-sub-desc">Select a time directly on our calendar to discuss your scope in detail.</p>
+            
+            <div class="mt-4">
+              <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+              <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+              <script>
+                (function() {
+                  var target = document.currentScript;
+                  window.addEventListener('load', function() {
+                    calendar.schedulingButton.load({
+                      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1CgA6jWVIIWds4o3F1P1P8PMN2cWilIqpopRyaxzUwmNRf09REJ67QyaDqjpzwPjDCyPqYXW8x?gv=true',
+                      color: '#1a73e8',
+                      label: "Schedule Video Call",
+                      target,
+                    });
+              
+                    var observer = new MutationObserver(function(mutations, obs) {
+                      var btn = document.querySelector('.calendar-scheduling-button');
+                      if (btn) {
+                        btn.classList.add('meet-style-btn');
+                        obs.disconnect();
+                      }
+                    });
+              
+                    observer.observe(document.body, { childList: true, subtree: true });
+                  });
+                })();
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Footer -->
+  <footer id="footer" class="site-footer">
+    <div class="container">
+      <div class="row gy-4">
+        <!-- Brand Column -->
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+          <a href="#home" class="footer-brand mb-3 d-block">
+            <img src="images/Mugcrater Logo 1.svg" alt="Mugcrater Logo" class="footer-logo">
+          </a>
+          <p class="footer-text">
+            Architecting high-performance, AI-driven web applications with modern engineering and rapid execution.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links list-unstyled">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links list-unstyled">
+            <li>Custom Web Apps</li>
+            <li>SaaS Development</li>
+            <li>AI & LLM Integration</li>
+            <li>Workflow Automation</li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-lg-3 col-md-6">
+          <h4 class="footer-heading">Get in Touch</h4>
+          <p class="footer-text mb-2">Have a project in mind? Reach out today.</p>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/company/mugcrater" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-1.3.52-1.88 1.45-1.88.92 0 1.3.73 1.3 1.88v4.93h2.79M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.62 1.62 0 1 0 0 3.24 1.62 1.62 0 0 0 0-3.24z"/>
+              </svg>
             </a>
-            <a class="carousel-control-next" href="#carouselSchool" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
+            <a href="mailto:mugcrater@gmail.com" aria-label="Email">
+              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
             </a>
           </div>
         </div>
-        <div class="col-12 aboutTitle">
-          <span class="contentTitle"> School Management </span>
-        </div>
-        <div class="col-12 aboutDesc">
-          <span class="contentDesc">An administrative system engineered to streamline school operations, curriculum mapping, and student data lifecycles. Built with a modular React architecture and Supabase, the platform features a real-time analytics dashboard that transforms complex multi-table relational data into immediate, actionable institutional insights.</span>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom mt-5 pt-4">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-left mb-2 mb-md-0">
+            <p id="currentYear" class="mb-0 copyright-text"></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </footer>
 
-  <div class="portfolioSection">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 aboutDesc">
-          <span class="contentBtn"><a href="https://www.mugcrater.com/pages/portfolio.html">View more</a></span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- //.Portfolio -->
-
-  <!-- Why Work with Us Section -->
-  <div class="contentSectionWhiteGrey">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 aboutTitle">
-          <span class="contentTitle"> Reasons to Choose These Services. </span>
-        </div>
-        <div class="col-12 aboutDesc">
-          <span class="contentDesc">
-            Offering competitive pricing options to suit your budget.
-            Crafting pixel-perfect digital experiences that captivate, engage, and deliver results.
-          </span>
-        </div>
-      </div>
-    </div>
-  </div><!-- //.Why Work with Us Section -->
-
-  <!-- Contact Us Section -->
-  <div class="contentSectionGrey" id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 aboutTitle">
-          <span class="contentTitle"> Get in touch. </span>
-        </div>
-        <div class="col-12 aboutIntro">
-          <span class="contentIntro"> Love to hear your thoughts! </span>
-        </div>
-        <hr class="borderLineContent"></hr>
-        <div class="col-12 aboutDesc">
-          <span class="contentDesc"> Ready to transform your online presence into something pixel-perfect through an Agile process? Let's collaborate and bring your web development project to life. </span>
-        </div>
-        <div class="col-12 aboutDesc">
-          <!-- Google Calendar Appointment Scheduling begin -->
-          <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-          <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-          <script>
-          (function() {
-            var target = document.currentScript;
-            window.addEventListener('load', function() {
-              calendar.schedulingButton.load({
-                url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1CgA6jWVIIWds4o3F1P1P8PMN2cWilIqpopRyaxzUwmNRf09REJ67QyaDqjpzwPjDCyPqYXW8x?gv=true',
-                color: '#39489e',
-                label: "Book an Appointment",
-                target,
-              });
-            });
-          })();
-          </script>
-          <!-- end Google Calendar Appointment Scheduling -->
-        </div>
-      </div>
-    </div>
-  </div><!-- //.Contact Us -->
-
-  <!-- start section footer -->
-  <div id="footer" class="text-center">
-    <div class="container">
-      <div class="socials-media text-center">
-        <ul class="list-unstyled">
-          <li><a href="https://www.linkedin.com/company/mugcrater" target="_blank"><i class="ion-social-linkedin"></i></a>
-          </li>
-          <li><a href="https://www.instagram.com/mugcrater" target="_blank"><i class="ion-social-instagram"></i></a>
-          </li>
-          <li><a href="mailto:mugcrater@gmail.com"><i class="ion-ios-email"></i></a>
-          </li>
-        </ul>
-        <p id="currentYear"></p>
-      </div>
-    </div>
-  </div>
-  <!-- End section footer -->
-
-  <!-- JavaScript Libraries -->
+  <!-- Scripts -->
   <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/typed/typed.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
-  <script src="lib/isotope/isotope.pkgd.min.js"></script>
-  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-
-  <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
-
 </body>
 </html>
