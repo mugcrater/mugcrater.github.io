@@ -1,205 +1,176 @@
-// ========================================================================= //
-//  Main Navigation
-// ========================================================================= //
-jQuery(document).ready(function(){
-  jQuery(window).scroll(function(){
-
-    var scroll = jQuery(window).scrollTop();
-    if (scroll < 100) {
-      jQuery(".header").css("background" , "none");
-      // jQuery(".header").css("transition", "0.2s");
-      jQuery(".main-nav").css("max-height" , "unset");
-      // jQuery(".main-nav ul a").css("font-size" , "20px");
-      jQuery(".site-logo img").css("max-height" , "3rem");
-      jQuery(".sidebar .closebtn").css("top" , "14px");
-      document.getElementById("header").style.top = "10px";
-    }
-    else{
-      jQuery(".header").css("background" , "#333333");
-      // jQuery(".header").css("transition", "0.2s");
-      jQuery(".main-nav").css("max-height" , "70px");
-      jQuery(".main-nav ul a").css("font-size" , "16px");
-      jQuery(".site-logo img").css("max-height" , "2rem");
-      jQuery(".sidebar .closebtn").css("top" , "0px");
-      document.getElementById("header").style.top = "0px";
-    }
-
-  });
-})
-
-// ========================================================================= //
-//  Sidebar Menu
-// ========================================================================= //
+/* Open Mobile Drawer Navigation */
 function openMainNav() {
-  document.getElementById("hamburger-main-nav").style.width = "100%";
+  const sidebar = document.getElementById("hamburger-main-nav");
+  const overlay = document.getElementById("sidebar-overlay");
+  const openBtn = document.getElementById("openNavBtn");
+
+  if (sidebar) {
+    sidebar.classList.add("active");
+    sidebar.setAttribute("aria-hidden", "false");
+  }
+  if (overlay) overlay.classList.add("active");
+  if (openBtn) openBtn.setAttribute("aria-expanded", "true");
+  
+  document.body.style.overflow = "hidden";
 }
+
+/* Close Mobile Drawer Navigation */
 function closeMainNav() {
-  document.getElementById("hamburger-main-nav").style.width = "0";
+  const sidebar = document.getElementById("hamburger-main-nav");
+  const overlay = document.getElementById("sidebar-overlay");
+  const openBtn = document.getElementById("openNavBtn");
+
+  if (sidebar) {
+    sidebar.classList.remove("active");
+    sidebar.setAttribute("aria-hidden", "true");
+  }
+  if (overlay) overlay.classList.remove("active");
+  if (openBtn) openBtn.setAttribute("aria-expanded", "false");
+
+  document.body.style.overflow = "";
 }
 
-// ========================================================================= //
-  //  //global $, jQuery, alert*/
-  // ========================================================================= //
-$(document).ready(function () {
+/* Select Lead Project Type in Step 1 */
+function selectLeadOption(value) {
+  const hiddenInput = document.getElementById("selectedProjectType");
+  if (hiddenInput) {
+    hiddenInput.value = value;
+  }
+  
+  const step1 = document.getElementById("formStep1");
+  const step2 = document.getElementById("formStep2");
+  if (step1) step1.classList.add("d-none");
+  if (step2) step2.classList.remove("d-none");
+}
 
-  'use strict';
+/* Reset multi-step form back to step 1 */
+function resetFormSteps() {
+  const step1 = document.getElementById("formStep1");
+  const step2 = document.getElementById("formStep2");
+  if (step1) step1.classList.remove("d-none");
+  if (step2) step2.classList.add("d-none");
+}
 
-  // ========================================================================= //
-  //  //SMOOTH SCROLL
-  // ========================================================================= //
+/* Submit lead via asynchronous AJAX call directly to free FormSubmit endpoint */
+function handleLeadSubmit(event) {
+  event.preventDefault();
+  
+  const form = document.getElementById("interactiveLeadForm");
+  const name = document.getElementById("leadName").value.trim();
+  const email = document.getElementById("leadEmail").value.trim();
+  const message = document.getElementById("leadMessage").value.trim();
+  const projectType = document.getElementById("selectedProjectType").value;
+  const errorMsg = document.getElementById("formErrorMsg");
+  const submitBtn = document.getElementById("submitBtn");
 
-
-  $(document).on("scroll", onScroll);
-
-  $('a[href^="#"]').on('click', function (e) {
-    e.preventDefault();
-    $(document).off("scroll");
-
-    $('a').each(function () {
-      $(this).removeClass('active');
-      if ($(window).width() < 768) {
-        $('.nav-menu').slideUp();
-      }
-    });
-
-    $(this).addClass('active');
-
-    var target = this.hash,
-      menu = target;
-
-    target = $(target);
-    $('html, body').stop().animate({
-      'scrollTop': target.offset().top - 80
-    }, 500, 'swing', function () {
-      window.location.hash = target.selector;
-      $(document).on("scroll", onScroll);
-    });
-  });
-
-
-  function onScroll(event) {
-    if ($('.home').length) {
-      var scrollPos = $(document).scrollTop();
-      $('nav ul li a').each(function () {
-        var currLink = $(this);
-        var refElement = $(currLink.attr("href"));
-      });
+  if (!name || !email || !message || !email.includes("@")) {
+    if (errorMsg) {
+      errorMsg.innerText = "Please fill in all required fields accurately.";
+      errorMsg.classList.remove("d-none");
     }
+    return;
   }
 
-  // ========================================================================= //
-  //  //NAVBAR SHOW - HIDE
-  // ========================================================================= //
+  if (errorMsg) errorMsg.classList.add("d-none");
+  if (submitBtn) {
+    submitBtn.innerText = "Sending Message...";
+    submitBtn.disabled = true;
+  }
 
-
-  $(window).scroll(function () {
-    var scroll = $(window).scrollTop();
-    if (scroll > 200) {
-      $("#main-nav, #main-nav-subpage").slideDown(700);
-      $("#main-nav-subpage").removeClass('subpage-nav');
+  fetch("https://formsubmit.co/ajax/mugcrater@gmail.com", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify({
+      "Name": name,
+      "Email": email,
+      "Project Type": projectType || "Not Specified",
+      "Message": message,
+      "_subject": "New Project Inquiry - Mugcrater",
+      "_template": "table"
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success === "true" || data.success === true) {
+      form.classList.add("d-none");
+      document.getElementById("leadSuccessMsg").classList.remove("d-none");
     } else {
-      $("#main-nav").slideUp(700);
-      $("#main-nav-subpage").hide();
-      $("#main-nav-subpage").addClass('subpage-nav');
+      if (submitBtn) {
+        submitBtn.innerText = "Send Message →";
+        submitBtn.disabled = false;
+      }
+      if (errorMsg) {
+        errorMsg.innerText = "Error sending message. Please try again.";
+        errorMsg.classList.remove("d-none");
+      }
+    }
+  })
+  .catch(error => {
+    if (submitBtn) {
+      submitBtn.innerText = "Send Message →";
+      submitBtn.disabled = false;
+    }
+    if (errorMsg) {
+      errorMsg.innerText = "An unexpected network error occurred. Please try again.";
+      errorMsg.classList.remove("d-none");
     }
   });
+}
 
-  // ========================================================================= //
-  //  // RESPONSIVE MENU
-  // ========================================================================= //
-
-  $('.responsive').on('click', function (e) {
-    $('.nav-menu').slideToggle();
-  });
-
-  // ========================================================================= //
-  //  Typed Js
-  // ========================================================================= //
-
-  var typed = $(".typed");
-
-  $(function () {
-    typed.typed({
-      strings: ["Ideas", "Innovations"],
-      typeSpeed: 150,
-      loop: true,
-    });
-  });
+/* Initialization on DOM Ready */
+document.addEventListener("DOMContentLoaded", function () {
   
+  // Dynamic Footer Current Year
+  const currentYearElem = document.getElementById("currentYear");
+  if (currentYearElem) {
+    currentYearElem.textContent = `© ${new Date().getFullYear()} Mugcrater Web Development Services. All rights reserved.`;
+  }
 
-
-  // ========================================================================= //
-  //  Owl Carousel Services
-  // ========================================================================= //
-
-
-  $('.services-carousel').owlCarousel({
-    autoplay: true,
-    loop: true,
-    margin: 20,
-    dots: true,
-    nav: false,
-    responsiveClass: true,
-    responsive: { 0: { items: 1 }, 768: { items: 2 }, 900: { items: 4 } }
-  });
-
-  // ========================================================================= //
-  //  magnificPopup
-  // ========================================================================= //
-
-  var magnifPopup = function () {
-    $('.popup-img').magnificPopup({
-      type: 'image',
-      removalDelay: 300,
-      mainClass: 'mfp-with-zoom',
-      gallery: {
-        enabled: true
-      },
-      zoom: {
-        enabled: true, // By default it's false, so don't forget to enable it
-
-        duration: 300, // duration of the effect, in milliseconds
-        easing: 'ease-in-out', // CSS transition easing function
-
-        // The "opener" function should return the element from which popup will be zoomed in
-        // and to which popup will be scaled down
-        // By defailt it looks for an image tag:
-        opener: function (openerElement) {
-          // openerElement is the element on which popup was initialized, in this case its <a> tag
-          // you don't need to add "opener" option if this code matches your needs, it's defailt one.
-          return openerElement.is('img') ? openerElement : openerElement.find('img');
-        }
+  // Sticky Header Scroll Listener
+  const headerElem = document.getElementById("header");
+  if (headerElem) {
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+        headerElem.classList.add("header-scrolled");
+      } else {
+        headerElem.classList.remove("header-scrolled");
       }
     });
-  };
+  }
 
+  // Mobile Link Click Handler for Smooth Anchoring
+  const sidebarLinks = document.querySelectorAll("#hamburger-main-nav a[href^='#']");
+  sidebarLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href");
+      closeMainNav();
 
-  // Call the functions
-  magnifPopup();
+      if (targetId && targetId !== "#") {
+        e.preventDefault();
+        setTimeout(() => {
+          const targetElem = document.querySelector(targetId);
+          if (targetElem) {
+            const headerOffset = 70;
+            const elementPosition = targetElem.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          }
+        }, 200);
+      }
+    });
+  });
+
+  // ESC Key Listener to Close Sidebar
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closeMainNav();
+    }
+  });
 });
-
-// ========================================================================= //
-//  Porfolio isotope and filter
-// ========================================================================= //
-$(window).load(function () {
-
-  var portfolioIsotope = $('.portfolio-container').isotope({
-    itemSelector: '.portfolio-thumbnail',
-    layoutMode: 'fitRows'
-  });
-
-  $('#portfolio-flters li').on('click', function () {
-    $("#portfolio-flters li").removeClass('filter-active');
-    $(this).addClass('filter-active');
-
-    portfolioIsotope.isotope({ filter: $(this).data('filter') });
-  });
-
-})
-
-// ========================================================================= //
-//  JavaScript code to get and display the current year
-// ========================================================================= //
-const currentYear = new Date().getFullYear();
-document.getElementById("currentYear").textContent = `© ${currentYear} MUGCRATER WEB DEVELOPMENT SERVICES`;
