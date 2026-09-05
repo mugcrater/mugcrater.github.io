@@ -77,7 +77,7 @@ function handleLeadSubmit(event) {
     submitBtn.disabled = true;
   }
 
-  fetch("https://formsubmit.co/ajax/mugcrater@gmail.com", {
+  fetch("https://formsubmit.co/ajax/doctoleemark@gmail.com", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -88,7 +88,7 @@ function handleLeadSubmit(event) {
       "Email": email,
       "Project Type": projectType || "Not Specified",
       "Message": message,
-      "_subject": "New Project Inquiry - Mugcrater",
+      "_subject": "Mugcrater - New Project Inquiry",
       "_template": "table"
     })
   })
