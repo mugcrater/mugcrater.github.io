@@ -382,6 +382,17 @@
               <script>
                 (function() {
                   var target = document.currentScript;
+                  var styleEl = document.createElement('style');
+                  styleEl.innerHTML = `
+                    iframe[src*="calendar.google.com"],
+                    .calendar-scheduling-iframe,
+                    div[role="dialog"] iframe {
+                      background-color: #ffffff !important;
+                      background: #ffffff !important;
+                    }
+                  `;
+                  document.head.appendChild(styleEl);
+                  
                   window.addEventListener('load', function() {
                     calendar.schedulingButton.load({
                       url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ1CgA6jWVIIWds4o3F1P1P8PMN2cWilIqpopRyaxzUwmNRf09REJ67QyaDqjpzwPjDCyPqYXW8x?gv=true',
